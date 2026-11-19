@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Platinum — GTA 6 Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <h1>Leonida Platinum</h1>
+    <p class="tagline">GTA 6 trophy guide &amp; tracker — all 55, in your own words, with sources</p>
+  </div>
+  <div class="totals" id="totals">
+    <div class="big"><span id="earnedCount">0</span><span class="of"> / 55</span></div>
+    <div class="bar"><div id="progressFill" class="fill"></div></div>
+    <div class="pct" id="platinumPct">0% to platinum</div>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs" aria-label="Views">
+  <button data-tab="checklist" class="on" type="button">Checklist</button>
+  <button data-tab="roadmap" type="button">Roadmap</button>
+  <button data-tab="missables" type="button">Missables</button>
+  <button data-tab="progress" type="button">Progress &amp; settings</button>
+</nav>
+
+<section class="toolbar" id="toolbar">
+  <input id="search" type="search" placeholder="Search a trophy or a word in its guide…" aria-label="Search trophies">
+  <label>Kind
+    <select id="kindFilter">
+      <option value="all">All kinds</option>
+      <option value="story">Story</option>
+      <option value="missable">Missable</option>
+      <option value="collectible">Collectibles</option>
+      <option value="activity">Activities</option>
+      <option value="robbery">Robbery</option>
+      <option value="side-story">Side stories</option>
+      <option value="misc">Misc</option>
+    </select>
+  </label>
+  <label>Grade
+    <select id="gradeFilter">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label>Status
+    <select id="statusFilter">
+      <option value="all">All</option>
+      <option value="earned">Earned</option>
+      <option value="remaining">Remaining</option>
+    </select>
+  </label>
+  <label class="spoiler">
+    <input id="spoilerToggle" type="checkbox" checked> Hide story trophies until earned
+  </label>
+</section>
+
+<main id="main">
+  <section id="view-checklist" class="view on">
+    <div class="split">
+      <div class="listcol">
+        <p class="hint" id="listHint"></p>
+        <ul id="trophyList" class="trophies"></ul>
+      </div>
+      <aside class="guidecol" id="guidePane" aria-live="polite">
+        <p class="guide-empty">Pick a trophy on the left to read its guide — what to do, where, when it can be missed, and the sources behind it.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="view-roadmap" class="view">
+    <p class="hint">The road to <strong>Vice Got a Price!</strong> in order. Work the stages top to bottom; the Next-up card always points at the first trophy you have not earned yet.</p>
+    <div id="nextUp" class="nextup"></div>
+    <div id="roadmap" class="stages"></div>
+  </section>
+
+  <section id="view-missables" class="view">
+    <p class="hint">There is no mission replay and no New Game Plus at launch, so save discipline matters — but only one trophy is a real missable risk.</p>
+    <div id="missableList" class="missables"></div>
+    <div class="notebox">
+      <strong>Everything else stays available after the credits.</strong>
+      All six side-story finales and the whole 100% checklist can be finished
+      after the story — work done earlier still counts. Keep a manual save at
+      the start of every chapter and one untouched save just before the final
+      mission (15 manual slots + 1 autosave). Cheats switch trophies and
+      saving off — keep them off on your trophy save.
+    </div>
+  </section>
+
+  <section id="view-progress" class="view">
+    <div class="split">
+      <div class="listcol">
+        <h2>Your progress</h2>
+        <div id="gradeBreakdown" class="breakdown"></div>
+        <h2>PSN progress counters</h2>
+        <ul id="counterList" class="counters"></ul>
+      </div>
+      <aside class="guidecol">
+        <h2>Your save</h2>
+        <p>Progress lives only in this browser (localStorage). Export it before
+        you clear site data, and import it back on another machine.</p>
+        <div class="actions">
+          <button id="exportBtn" type="button">Export progress (.json)</button>
+          <label class="importbtn">Import progress
+            <input id="importFile" type="file" accept="application/json,.json" hidden>
+          </label>
+          <button id="resetBtn" type="button" class="danger">Reset everything</button>
+        </div>
+        <p id="importMsg" class="hint"></p>
+        <h2>About the list</h2>
+        <p class="small">Names, descriptions and grades are the official PS5
+        list as mirrored by Exophase and PSNProfiles (the kit's frozen list,
+        18 Nov 2026). Guides are written in the author's own words from the
+        sources named under each trophy. Rockstar and Sony/Microsoft publish
+        no separate official list page — the PS5 trophy list itself is the
+        source. No Rockstar logo or artwork is used anywhere here.</p>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>Leonida Platinum — an unofficial fan guide. Grand Theft Auto and GTA are
+  trademarks of Rockstar Games. No online trophies exist in this list: every
+  trophy is single-player.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
